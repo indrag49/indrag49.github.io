@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Linux Libertine';
+    src: url("fonts/Linux Libertine.eot");
+    src: url("fonts/Linux Libertine.woff2") format("woff2"),
+    url("fonts/Linux Libertine.woff") format("woff"),
+    url("fonts/Linux Libertine.ttf") format("truetype"),
+    url("fonts/Linux Libertine.svg") format("svg");
+}
+
+
+body {
+    font-size: 12pt;
+    max-width: 800px; 
+    min-width: 800px; 
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Linux Libertine';
+    line-height: 20px;
+}
+
+a {
+    color: #003380;
+    text-decoration: none;
+}
+
+.headlink {
+    margin-top: 15px;
+}
+
+.headlink a {
+    color: #333300;
+    padding: 7px 19px 0px;
+    font-size: 13pt;
+    font-variant: small-caps;
+}
+
+ul {
+    line-height: 20px;
+    list-style: square;
+}
+
+
+li {
+    line-height: 25px;
+}
+
+
+li:before {
+    color: green;
+}
+
+img {
+    display: inline-block;
+    hspace: 0px;
+}
+
+h3 {
+    font-variant: small-caps;
+}
