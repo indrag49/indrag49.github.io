@@ -38,3 +38,34 @@ height=22></a>
 src="images/twitter.png"
 height=22></a></p>
 <center>&#9643;&emsp;&#9643;&emsp;&#9643;</center>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+            var map;
+            function initialize() {
+                var options =
+    {
+        zoom: 2,
+        center: new google.maps.LatLng(geoip_latitude(), geoip_longitude()),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: true,
+        mapTypeControlOptions:
+        {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            poistion: google.maps.ControlPosition.TOP_RIGHT,
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP,
+              google.maps.MapTypeId.TERRAIN,
+              google.maps.MapTypeId.HYBRID,
+              google.maps.MapTypeId.SATELLITE]
+        },
+        navigationControl: true,
+        navigationControlOptions:
+        {
+            style: google.maps.NavigationControlStyle.ZOOM_PAN
+        },
+        scaleControl: true,
+        disableDoubleClickZoom: true,
+        draggable: false,
+        streetViewControl: true,
+        draggableCursor: 'move'
+    };</script>
