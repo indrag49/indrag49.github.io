@@ -1,5 +1,5 @@
 I have been developing an <strong>R package</strong> that will help the community coming from a physics and/or an engineering background to carry out various calculuations and develop visualizations in computational physics
-with the help of R language. Currently, the name of the package that i have decided to stick to is <strong>``compho"</strong>, as in <strong>computational photonics</strong>.
+with the help of R language. Currently, the name of the package that i have decided to stick to is <strong>"compho"</strong>, as in <strong>computational photonics</strong>.
 I will add relevant documentations and eventually will open source the project once it has a presentable format. The package is under development and untill now, I have used the following dependencies: <strong>ggplot2</strong> and <strong>pracma</strong>.
 But first thing first, I will add simple examples here to demonstrate workings of some functions.
   
@@ -13,13 +13,21 @@ But first thing first, I will add simple examples here to demonstrate workings o
       </code>
       </pre>
       </figure>
-    This will generate the plot given below,
+    The above R code will generate the plot given below,
       
-      <p><img src="images/project1_1.png" hspace="20"></p>
-
-    
-    
-    
+      <p><img src="images/project1_1.png" hspace="20"></p>   
     </li>  
+    
+    <li> <a href = "https://en.wikipedia.org/wiki/Group_velocity"><strong> Group velocity plot</strong></a>
+    <figure>
+      <pre>
+      <code>
+      > group_velocity_plot(3.4, 10**-6, 0.6*10**-6, 1.5, 0.01, 0.01)
+      </code></pre></figure>
+      
+    The above code will generate,
+      <p><img src="images/project1_2.png" hspace="20"></p> </li>
+      
+      
     
   </ol>
