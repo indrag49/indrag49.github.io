@@ -1,79 +1,21 @@
-I have been developing an <strong>R package</strong> that will help the community coming from a physics and/or an engineering background to carry out various calculations and develop visualizations in computational photonics
-with the help of R language. Currently, the name of the package that I have decided to stick to is <strong>"compho"</strong>, as in <strong>computational photonics</strong>.
-I will add relevant documentations and eventually will open source the project once it has a presentable format. The package is under development and untill now, I have used the following dependencies: <strong>ggplot2</strong> and <strong>pracma</strong>.
-Now I will add simple examples here to demonstrate workings of some functions.
-  
-  <ol>
-    <li> <a href = "https://en.wikipedia.org/wiki/Sellmeier_equation"><strong>The Sellmeier Dispersion plot for BK7 glass</strong></a>
-    <figure>
-      <pre>
-      <code>
-      > #BK7 glass
-      > Sellmeier_dispersion_plot(0.2, 2, 1.03961212, 0.231792344, 1.01046945, 6.00069867*10**-3, 2.00179144*10**-2, 103.560653)
-      </code>
-      </pre>
-      </figure>
-    The above R code will generate the plot given below,
-      
-      <p><img src="images/project1_1.png" hspace="20"></p>   
-    </li>  
-    
-    <li> <a href = "https://en.wikipedia.org/wiki/Group_velocity"><strong> Group velocity plot</strong></a>
-    <figure>
-      <pre>
-      <code>
-      > group_velocity_plot(3.4, 10**-6, 0.6*10**-6, 1.5, 0.01, 0.01)
-      </code></pre></figure>
-      
-    The above code will generate,
-      <p><img src="images/project1_2.png" hspace="20"></p> </li>
+Last year I had the privilage to attend <a href="https://jupytercon.com/">JupyterCon 2020</a> that was held virtually, thanks to Covid-19. Given, the mental toll the pandemic enforced upon the global population,
+it was actually a pleasure to attend the conference virtually and listen to the talks from the industry experts. All the talks are openly available to the public through the conference's
+<a href="https://www.youtube.com/playlist?list=PL_1BH3ug7n1KCiM-g0x9ZoWuDNhwuM1kr">YouTube channel</a>. I would still go back and listen to these talks that are relevant to my research and interests.
+Some of the talks that I find very interesting are:
 
-<li> <a href = "https://en.wikipedia.org/wiki/Bessel_function"><strong>Bessel function plot</strong></a>
-    <figure>
-      <pre>
-      <code>
-      > n <- seq(0, 10, length=100)
-      > p1 <- BESSEL_J(0, n)
-      > p2 <- BESSEL_J(1, n)
-      > p3 <- BESSEL_J(2, n)
-      > df <- data.frame(n, p1, p2, p3)
-      > 
-      > ggplot(df, aes(n))+geom_line(aes(y=p1),colour="red")+geom_line(aes(y=p2), colour="green")+
-      +   geom_line(aes(y=p3), colour="blue")+ylab("J_m(n)")
-      </code></pre></figure>
-      
-    The above code will generate the plots for bessel functions of first kind,
-      <p><img src="images/project1_3.png" hspace="20"></p> </li>
-      
-      <li><strong>b-V diagram plot</strong>
-    <figure>
-      <pre>
-      <code>
-      > transverse_condition_plot(50, 1)
-      </code></pre></figure>
-      
-    The above code will generate the b-V diagram,
-      <p><img src="images/project1_4.png" hspace="20"></p> </li>
-      
-     <li><a href="https://spie.org/publications/pm135_241_material_dispersion?SSO=1"><strong>Material dispersion plot</strong></a>
-    <figure>
-      <pre>
-      <code>
-      > material_dispersion_plot(1.2, 1.6, 0.711040, 0.451885, 0.704048, 0.0642700, 0.129408, 9.425478, 2.432)
-      </code></pre></figure>
-      
-    The above code will generate the material dispersion plot,
-      <p><img src="images/project1_5.png" hspace="20"></p> </li>
+<ol>
   
-    <li><a href="https://en.wikipedia.org/wiki/Rectangular_function"><strong>Rectangular Function</strong></a>
-    <figure>
-      <pre>
-      <code>
-      rectangular_pulse_plot(1, 2, 20, 0.5)
-      </code></pre></figure>
-      
-    The above code will generate the rectangular pulse plot,
-      <p><img src="images/project1_6.png" hspace="20"></p> </li>
-  </ol>
+</ol>
 
-<strong>R</strong> is flexible and easy to use. I hail from a physics background and have noticed the trend to use Fortran and Python rigorously within the community, with R going unnoticed. My goal is to make <strong>R</strong> noticeable to more people from Physics and I hope to do so by contributing in every way possible.
+
+
+
+
+
+
+
+
+
+
+
+
