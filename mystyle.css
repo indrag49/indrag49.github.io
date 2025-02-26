@@ -10,7 +10,7 @@
 
 body {
     font-size: 14pt;
-    width: 100%;
+    max-width: 950px;
     text-align: left;
     margin-left: 20px;
     margin-right: 20px;
