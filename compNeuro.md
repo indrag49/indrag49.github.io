@@ -1,4 +1,0 @@
-In this blog, I am going to report about my ongoing research on dynamical systems approach to realsing how neurons behave. All this started when my long term friend and collaborator [Dr. Sishu Shankar Muni](https://scholar.google.com/citations?user=HqDJFc0AAAAJ&hl=en) put together a team that included him, [Dr. Hammed Olwale Fatoyinbo](https://scholar.google.com/citations?user=bJG2xVMAAAAJ&hl=en), and I, since which we will go on to collaborate and write many papers together. This was just after I started my Ph.D. in a [Royal Society Te Apārangi](https://www.royalsociety.org.nz/) funded project at [Massey University](https://www.massey.ac.nz/), Palmerston North, New Zealand.
-
-The first paper we wrote together was about a map based model of neuron dynamics put forward by [Dante Chailvo](https://scholar.google.com.au/citations?user=6UA7EwUAAAAJ&hl=en). It is a dynamical model made of two variables, one an activation variable and the other a recovery-like variable. 
-
