@@ -63,3 +63,8 @@ img {
 h3 {
     font-variant: small-caps;
 }
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
