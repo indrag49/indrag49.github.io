@@ -9,11 +9,12 @@ This blog is intended to teach the community how to accelerate simulations of ne
 This blog could have been a journal article!
 
 <p>
-$$
+\begin{equation}
+\label{eq:model_single}
 \begin{aligned}
     \dot{x} &= f(x, y, I) = x^2(1-x) - y + I, \\
     \dot{y} &= g(x, y, I) = A e^{\alpha x} - \gamma y, \\
     \dot{I} &= h(x, y, I) = \varepsilon\Bigg[\frac{1}{60}\Bigg\{1+\tanh\Bigg(\frac{0.05-x}{0.001}\Bigg)\Bigg\} - I\Bigg],
 \end{aligned}
-$$
+\end{equation}
 </p>
