@@ -1,3 +1,19 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
 This blog could have been an email! However, I decided to take the longer road of explicitly breaking down each and every step I took to run simulations of a network of slow-fast neurons.
 This blog is intended to teach the community how to accelerate simulations of neuron models on connected random networks. Okay, this blog is actually to teach <em>myself</em> how to accelerate simulations of neuron models on connected random networks.
 This blog could have been a journal article!
+
+<p>
+$$
+\begin{aligned}
+    \dot{x} &= f(x, y, I) = x^2(1-x) - y + I, \\
+    \dot{y} &= g(x, y, I) = A e^{\alpha x} - \gamma y, \\
+    \dot{I} &= h(x, y, I) = \varepsilon\Bigg[\frac{1}{60}\Bigg\{1+\tanh\Bigg(\frac{0.05-x}{0.001}\Bigg)\Bigg\} - I\Bigg],
+\end{aligned}
+$$
+</p>
