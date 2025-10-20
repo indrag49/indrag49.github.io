@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -52,5 +52,64 @@
   </div>
 
   <p>Equation <a href="#eq:model_single">1</a> defines the model dynamics.</p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Accelerating network simulations of slow-fast denatured Morris-Lecar neurons using Python</title>
+
+<!-- Load MathJax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!-- Enable automatic equation numbering -->
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',  // 'ams' = automatic equation numbering like LaTeX
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+
+<style>
+body {
+  font-family: "Georgia", serif;
+  max-width: 800px;
+  margin: 60px auto;
+  line-height: 1.6;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- <h2>Single Neuron Model</h2> -->
+
+This blog could have been an email! However, I decided to take the longer road of explicitly breaking down each and every step I took to run simulations of a network of slow-fast neurons.
+This blog is intended to teach the community how to accelerate simulations of neuron models on connected random networks. Okay, this blog is actually to teach <em>myself</em> how to accelerate simulations of neuron models on connected random networks.
+This blog could have been a journal article!
+
+$$
+\begin{equation}
+\label{eq:model_single}
+\begin{aligned}
+    \dot{x} &= f(x, y, I) = x^2(1-x) - y + I, \\
+    \dot{y} &= g(x, y, I) = A e^{\alpha x} - \gamma y, \\
+    \dot{I} &= h(x, y, I) = \varepsilon\Bigg[\frac{1}{60}\Bigg\{1+\tanh\Bigg(\frac{0.05-x}{0.001}\Bigg)\Bigg\} - I\Bigg],
+\end{aligned}
+\end{equation}
+$$
+
+<p>Equation \(\ref{eq:model_single}\) defines the model dynamics.</p>
+
 </body>
 </html>
