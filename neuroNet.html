@@ -3,12 +3,32 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',  // 'ams' = automatic equation numbering like LaTeX
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+
+<style>
+body {
+  font-family: "Georgia", serif;
+  max-width: 800px;
+  margin: 60px auto;
+  line-height: 1.6;
+  padding: 20px;
+}
+</style>
+
 
 This blog could have been an email! However, I decided to take the longer road of explicitly breaking down each and every step I took to run simulations of a network of slow-fast neurons.
 This blog is intended to teach the community how to accelerate simulations of neuron models on connected random networks. Okay, this blog is actually to teach <em>myself</em> how to accelerate simulations of neuron models on connected random networks.
 This blog could have been a journal article!
 
-<p>
+$$
 \begin{equation}
 \label{eq:model_single}
 \begin{aligned}
@@ -17,4 +37,6 @@ This blog could have been a journal article!
     \dot{I} &= h(x, y, I) = \varepsilon\Bigg[\frac{1}{60}\Bigg\{1+\tanh\Bigg(\frac{0.05-x}{0.001}\Bigg)\Bigg\} - I\Bigg],
 \end{aligned}
 \end{equation}
-</p>
+$$
+
+<p>Equation \(\ref{eq:model_single}\) defines the model dynamics.</p>
