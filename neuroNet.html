@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+n<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -45,7 +45,8 @@ This blog is intended to teach the community how to run simulations of neuron mo
 
 <p>We are interested in studying neurons as <em>dynamical systems</em>. In this tutorial we will talk about how neurons behave over time and how we can
 utilise tools and techniques from dynamical systems literaure to study this exactly. Neurons are <em>excitable</em> cells which exhibit dynamic firing and
-bursting patterns <a href="#HeYa21">[1]</a>.</p>
+bursting patterns <a href="#HeYa21">[1]</a>. Neurons as dynamical systems is a field called <em>neurodynamics</em>, and has been extensively covered in the 
+book by Izhikevich <a href="#Iz07">[2]</a></p>
 
 $$
 \begin{equation}
@@ -69,11 +70,36 @@ $$
 
 See <a href="#fig-brain">Figure 1</a> for details.
 
+A code snippet
+<pre><code class="language-python">
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+from matplotlib.collections import PatchCollection 
+# import plotly.graph_objects as go
+from matplotlib.patches import Circle
+from scipy.integrate import solve_ivp
+import nolds as nd
+from scipy.optimize import curve_fit
+from scipy.optimize import fsolve
+from scipy.stats import pearsonr
+import matplotlib.gridspec as gridspec
+import pandas as pd
+
+import lyapynov
+from lyapynov import ContinuousDS, DiscreteDS
+from lyapynov import mLCE, LCE, CLV, ADJ
+</code></pre>
+
 <hr>
 <h2>References</h2>
 <ol id="references">
   <li id="HeYa21">
      F. He and Y. Yang, Nonlinear system identification of neural systems from neurophysiological signals, <em>Neuroscience</em>, 458, 213 (2021).
+  </li>
+  <li id="Iz07">
+    E. Izhikevich, Dynamical Systems in Neuroscience (MIT Press, Cambridge, MA, 2007).
   </li>
 </ol>
 
