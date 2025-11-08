@@ -22,20 +22,39 @@ window.MathJax = {
 };
 </script>
 
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<!-- Add this to the <head> section of your HTML page -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
-<!-- <style>
-body {
-  font-family: "Georgia", serif;
-  max-width: 800px;
-  margin: 60px auto;
-  line-height: 1.6;
-  padding: 20px;
+<style>
+/* Center the code block */
+.code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
 }
-</style> -->
+
+/* Styled code box */
+.code-box {
+  background-color: #f8f9fa;
+  border: 2px solid #e2e8f0;
+  border-left: 5px solid #34a853; /* green accent */
+  border-radius: 8px;
+  padding: 1em;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional: monospace font tuning */
+.code-box code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+</style>
+
 </head>
 
 <body>
@@ -77,6 +96,8 @@ $$
 See <a href="#fig-brain">Figure 1</a> for details.
 
 A code snippet
+<div class="code-container">
+  <div class="code-box">
 <pre><code class="language-python">
 import numpy as np
 import matplotlib
@@ -97,6 +118,8 @@ import lyapynov
 from lyapynov import ContinuousDS, DiscreteDS
 from lyapynov import mLCE, LCE, CLV, ADJ
 </code></pre>
+  </div>
+</div>
 
 <hr>
 <h2>References</h2>
