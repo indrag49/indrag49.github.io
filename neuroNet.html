@@ -22,7 +22,7 @@ window.MathJax = {
 };
 </script>
 
-<!-- Add this to the <head> section of your HTML page -->
+<!-- Include Highlight.js for syntax highlighting -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
@@ -36,11 +36,11 @@ window.MathJax = {
   margin: 2em 0;
 }
 
-/* Styled code box */
+/* Styled code box with blue accent */
 .code-box {
-  background-color: #f8f9fa;
-  border: 2px solid #e2e8f0;
-  border-left: 5px solid #34a853; /* green accent */
+  background-color: #f8f9fa;             /* light background */
+  border: 2px solid #d0e3ff;             /* soft blue outer border */
+  border-left: 5px solid #1e90ff;        /* blue accent on left */
   border-radius: 8px;
   padding: 1em;
   width: 80%;
@@ -48,12 +48,13 @@ window.MathJax = {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Optional: monospace font tuning */
+/* Optional: monospace font and color tuning */
 .code-box code {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.9rem;
 }
 </style>
+
 
 </head>
 
