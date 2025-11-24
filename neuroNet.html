@@ -72,7 +72,7 @@ This blog is intended to teach the community how to run simulations of neuron mo
 <p>We are interested in studying neurons as <em>dynamical systems</em>. In this tutorial we will talk about how neurons behave over time and how we can
 utilise tools and techniques from dynamical systems literaure to study this exactly. Neurons are <em>excitable</em> cells which exhibit dynamic firing and
 bursting patterns <a href="#HeYa21">[1]</a>. Neurons as dynamical systems is a field called <em>neurodynamics</em>, and has been extensively covered in the 
-book by Izhikevich <a href="#Iz07">[2]</a></p>. We will consider the famous model of neuron dynamics by Fitzhugh and Nagumo<a href="#Fi61">[3]</a>. </p>
+book by Izhikevich <a href="#Iz07">[2]</a>. We will consider the famous model of neuron dynamics by Fitzhugh and Nagumo <a href="#Fi61">[3]</a>.</p>
 
 <p>
 The model equations are given by
@@ -85,6 +85,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+Each neuron is represented by two variables $(v, w)$. The membrane potential (or the voltage) is given by $v$ and the recovery variable is given by $w$.
+The voltage $v$ is the "fast" variable which changes quickly on neuron firing, and $w$ is the "slow" variable that moderates bringing the neuron back to its initial state after firing.
 </p>
 <p>Equation \(\ref{eq:model_single}\) defines the model dynamics.</p>
 
