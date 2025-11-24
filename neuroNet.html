@@ -107,7 +107,7 @@ $$
 $$
 Each neuron is represented by two variables $(v, w)$. The membrane potential (or the voltage) is given by $v$ and the recovery variable is given by $w$.
 The voltage $v$ is the "fast" variable which changes quickly on neuron firing, and $w$ is the "slow" variable that moderates bringing the neuron back to its initial state after firing.
-The parameters are given in <a href="#tab:parameters">the table below</a>.
+Biophysically speaking, the variable $w$ models the reactivation of the sodium channel and deactivation of the potassium channel. The parameters are given in <a href="#tab:parameters">the table below</a>.
   
 <table id="tab:parameters" class="centered">
   <caption>Parameters for the FitzHugh-Nagumo neuron model</caption>
@@ -124,17 +124,19 @@ The parameters are given in <a href="#tab:parameters">the table below</a>.
 
 </p>
 
-  
-<p>Equation \(\ref{eq:model_single}\) defines the model dynamics.</p>
-
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
 
+<h2>The brain abstracted as a graph</h2>
+
+<p>Billions of neurons form a complex topology to make up the functionalities of the brain. This complex topology can be abstracted as a graph.
+See <a href="#fig-brain">Figure 1</a> for details for a schematic representation. This representation however is not exhaustive.
 <figure style="text-align:center" id="fig-brain">
   <img src="images/networkOnBrain.png" width="450">
   <figcaption><b>Figure 1.</b> Erdős–Rényi network overlaid on the brain. (Brain schematic taken from WikiPedia)</figcaption>
 </figure>
+Each neuron, represented by a red node in <a href="#fig-brain">Figure 1</a> has its own internal dynamics governed by \(\ref{eq:model_single}\).
 
-See <a href="#fig-brain">Figure 1</a> for details.
+</p>
 
 <h2>Introduction to graphs and <code>NetworkX</code></h2>
 
