@@ -164,6 +164,22 @@ nullcline_w = (X + a) / b
   </div>
 </div>
 
+The next step is to define the FitzHugh-Nagumo system of ordinary differential equations governing the dynamics of a single neuron.
+We write a <code>Python</code> function:
+
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+def fhn_system(t, vars):
+    v, w = vars
+    dvdt = v - (v**3)/3 - w + I_ext
+    dwdt = (v + a - b*w) / tau
+    return [dvdt, dwdt]
+</code></pre>
+  </div>
+</div>
+
+
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
