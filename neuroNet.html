@@ -123,6 +123,7 @@ Biophysically speaking, the variable $w$ models the reactivation of the sodium c
 </table>
 Let us run a simulation to plot the phase portrait and time series of the neuron model. We will set $I_{\rm ext} = 0.5$, $a = 0.7$, $b = 0.8$, and $\tau = 12.5$.
 Let us first import the necessary <code>Python</code> packages:
+  
 <div class="code-container">
   <div class="code-box">
 <pre><code class="language-python">
@@ -133,7 +134,23 @@ from matplotlib.gridspec import GridSpec
 </code></pre>
   </div>
 </div>
-</p>
+
+We require <a href="https://numpy.org/"><code>numpy</code></a> for accessing the linear algebra suite, <a href="https://matplotlib.org/"><code>matplotlib</code></a> for creating plots, 
+and <a href="https://scipy.org/"><code>scipy</code></a> for accessing algorithms for performing scientific computing. Next we define the parameters in <code>Python</code>:
+
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+a     = 0.7
+b     = 0.8
+tau   = 12.5
+I_ext = 0.5
+</code></pre>
+  </div>
+</div>
+
+
+</p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
 
