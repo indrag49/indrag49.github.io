@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>A tutorial on simulating slow-fast dynamical neurons using <code>Python</code></title>
+<title>A tutorial on simulating dynamical neurons using <code>Python</code></title>
 
 <!-- Load MathJax -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -60,7 +60,7 @@ window.MathJax = {
 
 <body>
 
-<h1>A tutorial on simulating slow-fast dynamical neurons using <code>Python</code>.</h1>
+<h1>A tutorial on simulating dynamical neurons using <code>Python</code>.</h1>
 
 This blog could have been an email! However, I decided to take the longer road of explicitly breaking down each and every step I took to run simulations of slow-fast neurons.
 This blog is intended to teach the community how to run simulations of neuron models using <code>Python</code>. This blog could have been a journal article! I was just too lazy to go through all the hassles and instead dive into preparing this tutorial.
@@ -72,19 +72,20 @@ This blog is intended to teach the community how to run simulations of neuron mo
 <p>We are interested in studying neurons as <em>dynamical systems</em>. In this tutorial we will talk about how neurons behave over time and how we can
 utilise tools and techniques from dynamical systems literaure to study this exactly. Neurons are <em>excitable</em> cells which exhibit dynamic firing and
 bursting patterns <a href="#HeYa21">[1]</a>. Neurons as dynamical systems is a field called <em>neurodynamics</em>, and has been extensively covered in the 
-book by Izhikevich <a href="#Iz07">[2]</a></p>
+book by Izhikevich <a href="#Iz07">[2]</a></p>. We will consider the famous model of neuron dynamics by Fitzhugh and Nagumo<a href="#Fi61">[3]</a>. </p>
 
+<p>
+The model equations are given by
 $$
 \begin{equation}
 \label{eq:model_single}
 \begin{aligned}
-    \dot{x} &= f(x, y, I) = x^2(1-x) - y + I, \\
-    \dot{y} &= g(x, y, I) = A e^{\alpha x} - \gamma y, \\
-    \dot{I} &= h(x, y, I) = \varepsilon\Bigg[\frac{1}{60}\Bigg\{1+\tanh\Bigg(\frac{0.05-x}{0.001}\Bigg)\Bigg\} - I\Bigg],
+    \dot{v} &= f(v, w) = v - \frac{v^3}{3} - w + I_{\rm ext}, \\
+    \dot{w} &= g(v, w) = \frac{v + a - bw}{\tau}. \\
 \end{aligned}
 \end{equation}
 $$
-
+</p>
 <p>Equation \(\ref{eq:model_single}\) defines the model dynamics.</p>
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
@@ -96,7 +97,10 @@ $$
 
 See <a href="#fig-brain">Figure 1</a> for details.
 
-A code snippet
+<h2>Introduction to graphs and <code>NetworkX</code></h2>
+
+
+Import the required packages.
 <div class="code-container">
   <div class="code-box">
 <pre><code class="language-python">
@@ -128,9 +132,13 @@ from lyapynov import mLCE, LCE, CLV, ADJ
   <li id="HeYa21">
      F. He and Y. Yang, Nonlinear system identification of neural systems from neurophysiological signals, <em>Neuroscience</em>, 458, 213 (2021).
   </li>
+  
   <li id="Iz07">
     E. Izhikevich, Dynamical Systems in Neuroscience (MIT Press, Cambridge, MA, 2007).
   </li>
+
+  <li id="Fi61"> R. FitzHugh, Impulses and physiological states in theoretical models of nerve membrane, Biophys. J. 1, 445 (1961).</li>
+  
 </ol>
 
 </body>
