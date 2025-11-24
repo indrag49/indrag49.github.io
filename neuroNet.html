@@ -53,6 +53,26 @@ window.MathJax = {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.9rem;
 }
+
+table.centered {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    /* optional styling */
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  table.centered th,
+  table.centered td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: left;
+  }
+  table.centered caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
 </style>
 
 
@@ -87,23 +107,20 @@ $$
 $$
 Each neuron is represented by two variables $(v, w)$. The membrane potential (or the voltage) is given by $v$ and the recovery variable is given by $w$.
 The voltage $v$ is the "fast" variable which changes quickly on neuron firing, and $w$ is the "slow" variable that moderates bringing the neuron back to its initial state after firing.
-The parameters are given in Tab.\(\ref{tab:parameters}\).
+The parameters are given in <a href="#tab:parameters">the parameter table</a>.
   
-\begin{table}
-  \centering
-  \caption{Parameters for the singel FitzHugh–Nagumo neuron}
-  \label{tab:parameters}
-  \begin{tabular}{l l}
-    \hline
-    \textbf{Symbol} & \textbf{Definition} \\
-    \hline
-    $I_{\rm ext}$            & External input current to the neuron\\
-    $a$            & Recovery shift parameter\\
-    $b$            & Recovery slope parameter\\
-    $\tau$         & Time‐scale separation (slow variable)
-    \hline
-  \end{tabular}
-\end{table}
+<table id="tab:parameters" class="centered">
+  <caption>Parameters for the FitzHugh–Nagumo neuron model</caption>
+  <thead>
+    <tr><th>Symbol</th><th>Definition</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>I<sub>ext</sub></td><td>External input current to the neuron</td></tr>
+    <tr><td>a</td><td>Recovery shift parameter</td></tr>
+    <tr><td>b</td><td>Recovery slope parameter</td></tr>
+    <tr><td>τ</td><td>Time‐scale separation (slow variable)</td></tr>
+  </tbody>
+</table>
 
 </p>
 
