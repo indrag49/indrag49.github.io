@@ -121,7 +121,18 @@ Biophysically speaking, the variable $w$ models the reactivation of the sodium c
     <tr><td>$\tau$</td><td>Time‐scale separation (slow variable)</td></tr>
   </tbody>
 </table>
-Let us run a simulation to plot the phase portrait and time series of the neuron model.
+Let us run a simulation to plot the phase portrait and time series of the neuron model. We will set $I_{\rm ext} = 0.5$, $a = 0.7$, $b = 0.8$, and $\tau = 12.5$.
+Let us first import the necessary <code>Python</code> packages:
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+from matplotlib.gridspec import GridSpec
+</code></pre>
+  </div>
+</div>
 </p>
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
@@ -143,7 +154,7 @@ either static or evolving, depending upon the topology one wants to analyse.
 
 
 Import the required packages.
-<div class="code-container">
+<!-- <div class="code-container">
   <div class="code-box">
 <pre><code class="language-python">
 import numpy as np
@@ -166,7 +177,7 @@ from lyapynov import ContinuousDS, DiscreteDS
 from lyapynov import mLCE, LCE, CLV, ADJ
 </code></pre>
   </div>
-</div>
+</div> -->
 
 <hr>
 <h2>References</h2>
