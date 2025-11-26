@@ -179,7 +179,33 @@ def fhn_system(t, vars):
   </div>
 </div>
 
+We define the time duration and time steps:
 
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+v0, w0 = -1.0, 1.0
+t_span = (0, 500)
+t_eval = np.linspace(t_span[0], t_span[1], 5000)
+</code></pre>
+  </div>
+</div>
+
+and solve the system of ODEs using the <code>solve_ivp()</code> function from <code>scipy</code>, which goes:
+
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+sol = solve_ivp(fhn_system, t_span, [v0, w0], t_eval=t_eval, method='LSODA')
+v_sol = sol.y[0]
+w_sol = sol.y[1]
+t_sol = sol.t
+</code></pre>
+  </div>
+</div>
+We collect the solutions in <code>v_sol</code>, <code>w_sol</code> and the time stamps <code>t_sol</code>. We have a few things to discuss here.
+  
+  
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
