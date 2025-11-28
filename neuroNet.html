@@ -227,6 +227,8 @@ t_sol = sol.t
 We collect the solutions in <code>v_sol</code>, <code>w_sol</code> and the time stamps <code>t_sol</code>. We have a few things to discuss here.
 Given an initial condition, the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html"><code>solve_ivp()</code> </a> function numerically integrates a system of ODEs.
 There are several integration methods available for solving the equations. The most commonly used one is the '<code>RK45</code>' which is the Explicit Runge-Kutta method of order 5(4). See <a href="#DoPr90">[4]</a>.
+The system of ODEs considered here have variables evolving in different timescales, thus can be stiff. So '<code>RK45</code>' can be inefficient.
+Instead, we use '<code>LSODA</code>'.
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
