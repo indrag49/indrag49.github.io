@@ -228,7 +228,9 @@ We collect the solutions in <code>v_sol</code>, <code>w_sol</code> and the time 
 Given an initial condition, the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html"><code>solve_ivp()</code> </a> function numerically integrates a system of ODEs.
 There are several integration methods available for solving the equations. The most commonly used one is the '<code>RK45</code>' which is the Explicit Runge-Kutta method of order 5(4). See <a href="#DoPr90">[4]</a>.
 The system of ODEs considered here have variables evolving in different timescales, thus can be stiff. So '<code>RK45</code>' can be inefficient.
-Instead, we use '<code>LSODA</code>'. <code>LSODA</code> is a numerical solver originally written in <code>FORTRAN</code></code> as part of the <a href="https://computing.llnl.gov/projects/odepack"><code>ODEPACK</code></a> collection.
+Instead, we use '<code>LSODA</code>'. <code>LSODA</code> is a numerical solver originally written in <code>FORTRAN</code></code> as part of the <a href="https://computing.llnl.gov/projects/odepack"><code>ODEPACK</code></a> [<a href="#Hi83">5</a>, <a href="#Pe83">6</a>] collection.
+<code>LSODA</code> works well for both stiff and non-stiff systems and can dynamically switch between them as per the problem provided. For non-stiff systems
+it uses the Adams–Bashforth–Moulton predictor–corrector method   
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
@@ -287,7 +289,10 @@ from lyapynov import mLCE, LCE, CLV, ADJ
   </li>
 
   <li id="Fi61"> R. FitzHugh, Impulses and physiological states in theoretical models of nerve membrane, Biophys. J. 1, 445 (1961).</li>
-  <li id="DoPr90"> J. R. Dormand, P. J. Prince, A family of embedded Runge-Kutta formulae, Journal of Computational and Applied Mathematics, Vol. 6, No. 1, pp. 19-26 (1980).</li>
+  <li id="DoPr90"> J. R. Dormand, P. J. Prince, A family of embedded Runge-Kutta formulae, J. Comput. Appl. Math., Vol. 6, No. 1, pp. 19-26 (1980).</li>
+
+  <li id="Hi83">A. C. Hindmarsh, “ODEPACK, A Systematized Collection of ODE Solvers,” IMACS Transactions on Scientific Computation, Vol 1., pp. 55-64 (1983).</li>
+  <li id="Pe83">L. Petzold, “Automatic selection of methods for solving stiff and nonstiff systems of ordinary differential equations”, SIAM J. Sci. Stat. Comput. Vol. 4, No. 1, pp. 136-148 (1983).</li>
 </ol>
 
 </body>
