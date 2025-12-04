@@ -264,7 +264,12 @@ plt.tight_layout()
 </code></pre>
   </div>
 </div>
-  
+
+The phase portrit and time series of the single FHN neuron is shown in <a href="#fig-pptsfhn">Figure 1</a>.
+<figure style="text-align:center" id="fig-pptsfhn">
+  <img src="images/PPTSFHN.png" width="450">
+  <figcaption><b>Figure 1.</b> Phase portrat and time series of an FHN neuron.</figcaption>
+</figure>
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
@@ -272,10 +277,10 @@ plt.tight_layout()
 <h2>The brain abstracted as a graph</h2>
 
 <p>Billions of neurons form a complex topology to make up the functionalities of the brain. This complex topology can be abstracted as a graph.
-See <a href="#fig-brain">Figure 1</a> for details for a schematic representation. This representation however is not exhaustive.
+See <a href="#fig-brain">Figure 2</a> for details for a schematic representation. This representation however is not exhaustive.
 <figure style="text-align:center" id="fig-brain">
   <img src="images/networkOnBrain.png" width="450">
-  <figcaption><b>Figure 1.</b> Erdős–Rényi network overlaid on the brain. (Brain schematic taken from WikiPedia)</figcaption>
+  <figcaption><b>Figure 2.</b> Erdős–Rényi network overlaid on the brain. (Brain schematic taken from WikiPedia)</figcaption>
 </figure>
 Each neuron, represented by a red node in <a href="#fig-brain">Figure 1</a> has its own internal dynamics governed by \(\ref{eq:model_single}\).
 Because each neuron is dynamic, the whole network is a temporal network which evolves in time. The couplings (represneted by edges) can be 
