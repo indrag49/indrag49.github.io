@@ -229,8 +229,42 @@ Given an initial condition, the <a href="https://docs.scipy.org/doc/scipy/refere
 There are several integration methods available for solving the equations. The most commonly used one is the '<code>RK45</code>' which is the Explicit Runge-Kutta method of order 5(4). See <a href="#DoPr90">[4]</a>.
 The system of ODEs considered here have variables evolving in different timescales, thus can be stiff. So '<code>RK45</code>' can be inefficient.
 Instead, we use '<code>LSODA</code>'. <code>LSODA</code> is a numerical solver originally written in <code>FORTRAN</code></code> as part of the <a href="https://computing.llnl.gov/projects/odepack"><code>ODEPACK</code></a> [<a href="#Hi83">5</a>, <a href="#Pe83">6</a>] collection.
-<code>LSODA</code> works well for both stiff and non-stiff systems and can dynamically switch between them as per the problem provided. For non-stiff systems
-it uses the Adams–Bashforth–Moulton predictor–corrector method   
+<code>LSODA</code> works well for both stiff and non-stiff systems and can dynamically switch between them as per the problem provided. Thus it is a good choice to use <code>LSODA</code> 
+to solve neuron ODE systems as they vary between slow and fast dyanmics. Once the system of ODEs is solved, we can plot the phase portrait and time series:
+
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+sz=20
+lw = 6
+lw2=4
+fig = plt.figure(figsize=(18,5))
+gs = GridSpec(nrows=1, ncols=3, figure=fig, width_ratios=[1,1,1])
+
+ax_phase = fig.add_subplot(gs[0,0])
+ax_phase.contour(X, Y, Y - nullcline_v, levels=[0], colors='blue', linewidths=lw2, linestyles='--')
+ax_phase.contour(X, Y, Y - nullcline_w, levels=[0], colors='red',  linewidths=lw2, linestyles='--')
+ax_phase.plot(v_sol, w_sol, 'k-', lw=4)
+ax_phase.set_xlabel("$v$", fontsize=sz)
+ax_phase.set_ylabel("$w$", fontsize=sz)
+ax_phase.tick_params(axis='both', labelsize=sz+4, width=2, length=8)
+ax_phase.grid(True)
+
+ax_ts = fig.add_subplot(gs[0,1:])
+ax_ts.plot(t_sol, v_sol, label="$v(t)$ (fast)", color='tab:blue', lw=lw)
+ax_ts.plot(t_sol, w_sol, label="$w(t)$ (slow)", color='tab:orange', alpha=0.7, lw=lw)
+ax_ts.set_xlabel("Time", fontsize=sz)
+ax_ts.set_ylabel("Variables", fontsize=sz)
+ax_ts.set_title("$I_{\\rm ext} = $"+ str(I_ext), size=sz)
+ax_ts.legend()
+ax_ts.tick_params(axis='both', labelsize=sz+4, width=2, length=8)
+ax_ts.grid(True)
+
+plt.tight_layout()
+</code></pre>
+  </div>
+</div>
+  
 </p> 
 
 <!-- <img src="images/networkOnBrain.png" width="600"/> -->
