@@ -291,11 +291,54 @@ and <i>networks</i>. The <code>Python</code> API for simulating graphs and netwo
 <h2>Introduction to graphs and <code>NetworkX</code></h2>
 In this section we will review the basics of graph theory and how to use <code>NetworkX</code>. A <em>graph</em> is a data structure
 that consists of nodes and edges, which can be semantically denoted as $G = (N, E)$. The individual entities in the graph are represented by
-the set of nodes $N$, and the connections between them are represented by the set of edges $E$. A sample graph is shown in <a href="#fig-graph">Figure 3</a>.
+the set of nodes $N$, and the connections between them are represented by the set of edges $E$. A sample graph is shown in <a href="#fig-graph">Figure 3</a>
+with the $N=\{1, 2, 3, 4, 5, 6\}$ and $E=\{(1, 2), (1, 3), (1, 5), (2, 4), (3, 4), (4, 5), (4, 6), (3, 3), (2, 6), (5, 5)\}$.
 <figure style="text-align:center" id="fig-graph">
   <img src="images/graph.png" width="450">
   <figcaption><b>Figure 3.</b> A sample graph</figcaption>
 </figure>
+Note there is a couple of self loops on nodes $3$ and $5$. One can use <code>NetworkX</code> by installing it using
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+$ pip install networkx
+</code></pre>
+  </div>
+</div>
+Then the graph in <a href="#fig-graph">Figure 3</a> can be visualised using
+<div class="code-container">
+  <div class="code-box">
+<pre><code class="language-python">
+import networkx as nx
+
+G = nx.Graph()
+
+G.add_nodes_from([1, 2, 3, 4, 5, 6])
+
+G.add_edges_from([
+    (1, 2), (1, 3),
+    (1, 5), (2, 4),
+    (3, 4), (4, 5),
+    (4, 6), (3, 3),
+    (2, 6), (5, 5)
+])
+
+plt.figure(figsize=(4, 4))
+nx.draw(
+    G,
+    with_labels=True,
+    node_color="#F0EFE7",
+    node_size=1000,
+    edgecolors="black",
+    linewidths=3,
+    edge_color="black",
+    width=3,
+    font_size=20
+)
+
+</code></pre>
+  </div>
+</div>  
 
 <!-- Import the required packages. -->
 <!-- <div class="code-container">
